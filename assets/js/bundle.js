@@ -5816,7 +5816,8 @@ module.exports = {
 	"main": "bundle.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "webpack-dev-server"
+		"start": "webpack-dev-server",
+		"build": "webpack --config ./dist/webpack.config.js"
 	},
 	"author": "Densho Channel",
 	"devDependencies": {
