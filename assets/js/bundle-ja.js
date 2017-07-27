@@ -8858,7 +8858,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_i18n__["a" /* default */]);
 const messages = __webpack_require__(194);
 
 const i18n = new __WEBPACK_IMPORTED_MODULE_0_vue_i18n__["a" /* default */]({
-  'locale': 'en',
+  'locale': 'ja',
   'fallbackLocale': 'en',
   messages,
 });
