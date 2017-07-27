@@ -29764,6 +29764,18 @@ module.exports = Component.exports
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 module.exports = {};
 
@@ -29786,7 +29798,23 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": "/"
     }
-  }, [_vm._v("\n        REPLYCA\n      ")])])])])
+  }, [_vm._v("\n        REPLYCA\n      ")])]), _vm._v(" "), _c('div', {
+    staticClass: "navbar-item has-dropdown is-hoverable is-hidden-touch"
+  }, [_c('a', {
+    staticClass: "navbar-link"
+  }, [_vm._v("Language")]), _vm._v(" "), _c('div', {
+    staticClass: "navbar-dropdown"
+  }, [_c('a', {
+    staticClass: "navbar-item",
+    attrs: {
+      "href": "/"
+    }
+  }, [_vm._v("\n            English\n          ")]), _vm._v(" "), _c('a', {
+    staticClass: "navbar-item",
+    attrs: {
+      "href": "/ja/"
+    }
+  }, [_vm._v("\n            日本語\n          ")])])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -31413,8 +31441,8 @@ const messages = {
       'subtitle': 'Drag & drop image files here or...',
       'upload-button-label': 'upload image files',
       'draggable': {
-      	'title': 'Sort pages if necessary',
-      	'subtitle': 'subtitle',
+        'title': 'Sort pages if necessary',
+        'subtitle': 'subtitle',
         'showDetails': 'Show Details',
         'hideDetails': 'Hide Details',
         'clear': 'Clear uploaded files',
@@ -31481,8 +31509,8 @@ const messages = {
       'subtitle': 'ここに画像ファイルをドラッグ&ドロップしてください',
       'upload-button-label': 'アップロードする',
       'draggable': {
-      	'title': 'Sort pages if necessary',
-      	'subtitle': 'subtitle',
+        'title': 'Sort pages if necessary',
+        'subtitle': 'subtitle',
         'showDetails': 'Show Details',
         'hideDetails': 'Hide Details',
         'clear': 'Clear uploaded files',
