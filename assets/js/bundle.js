@@ -9289,6 +9289,15 @@ module.exports = function listToStyles (parentId, list) {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 const draggable = __webpack_require__(69);
 const appVersion = __webpack_require__(31).version;
@@ -29434,7 +29443,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('section', {
     staticClass: "modal-card-body"
   }, [_c('div', {
-    staticClass: "columns is-mobile"
+    staticClass: "columns"
   }, [_c('div', {
     staticClass: "column is-half"
   }, [_c('figure', {
@@ -29534,7 +29543,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }],
     staticClass: "textarea is-small",
     attrs: {
-      "rows": "3",
+      "rows": "2",
       "placeholder": _vm.$t('message.draggable.alt-text'),
       "disabled": _vm.modal.index === 0
     },
@@ -29653,7 +29662,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "value": "colophon"
     }
-  }, [_vm._v(" " + _vm._s(_vm.$t('message.draggable.role.colophon')))])])])])])])])])]) : _vm._e(), _vm._v(" "), _c('button', {
+  }, [_vm._v(" " + _vm._s(_vm.$t('message.draggable.role.colophon')))])])])])]), _vm._v(" "), _c('div', {
+    staticClass: "field"
+  }, [_c('p', {
+    staticClass: "control"
+  }, [_c('button', {
+    staticClass: "button is-small is-outlined",
+    on: {
+      "click": function($event) {
+        _vm.modal.active = false
+      }
+    }
+  }, [_vm._m(3), _vm._v("  Close\n                    ")])])])])])])]) : _vm._e(), _vm._v(" "), _c('button', {
     staticClass: "modal-close is-large",
     on: {
       "click": function($event) {
@@ -29912,6 +29932,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "icon is-small"
   }, [_c('i', {
     staticClass: "fa fa-times"
+  })])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', {
+    staticClass: "icon is-small"
+  }, [_c('i', {
+    staticClass: "fa fa-times",
+    attrs: {
+      "aria-hidden": "true"
+    }
   })])
 }]}
 module.exports.render._withStripped = true
