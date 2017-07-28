@@ -8841,12 +8841,12 @@ module.exports = exports['default'];
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_i18n__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_i18n__ = __webpack_require__(194);
 const Vue = __webpack_require__(63);
 const App = __webpack_require__(64);
-const nav = __webpack_require__(184);
-const footer = __webpack_require__(187);
-const Sass = __webpack_require__(192);
+const nav = __webpack_require__(185);
+const footer = __webpack_require__(188);
+const Sass = __webpack_require__(193);
 
 Vue.component('app', App);
 Vue.component('nav-component', nav);
@@ -8855,7 +8855,7 @@ Vue.component('footer-component', footer);
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_i18n__["a" /* default */]);
 
-const messages = __webpack_require__(194);
+const messages = __webpack_require__(195);
 
 const i18n = new __WEBPACK_IMPORTED_MODULE_0_vue_i18n__["a" /* default */]({
   'locale': 'en',
@@ -8896,7 +8896,7 @@ var Component = __webpack_require__(5)(
   /* script */
   __webpack_require__(68),
   /* template */
-  __webpack_require__(183),
+  __webpack_require__(184),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -9360,6 +9360,8 @@ module.exports = {
         i++;
 
       }
+
+      cmp.scrollToElement('manager');
     },
 
     // ファイルを追加する
@@ -9550,6 +9552,20 @@ module.exports = {
     'showInModal': function (index) {
       this.modal.index = index;
       this.modal.active = true;
+    },
+
+    //
+    'scrollToElement': function (id) {
+
+      const element = document.getElementById(id);
+      console.log(element);
+
+      //if( element === null ) { return; }
+
+      const rect = element.getBoundingClientRect();  
+
+      window.scrollTo(rect.left, rect.top);  
+
     }
   },
 
@@ -9591,6 +9607,8 @@ module.exports = {
         i++;
 
       }
+
+      cmp.scrollToElement('manager');
 
     }, false);
 
@@ -28249,7 +28267,19 @@ module.exports = str;
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "section container"
-  }, [_vm._m(0), _vm._v(" "), _c('div', {
+  }, [_c('div', {
+    staticClass: "has-text-centered"
+  }, [_c('h1', {
+    staticClass: "title is-spaced",
+    domProps: {
+      "innerHTML": _vm._s(_vm.$t('message.form.head'))
+    }
+  }), _vm._v(" "), _c('p', {
+    staticClass: "subtitle is-spaced",
+    domProps: {
+      "innerHTML": _vm._s(_vm.$t('message.form.subhead'))
+    }
+  })]), _vm._v(" "), _c('div', {
     staticClass: "level m-t"
   }, [_c('p', {
     staticClass: "level-item"
@@ -28261,12 +28291,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.toggleDetails
     }
-  }, [_vm._m(1), _vm._v("\n         "), _c('span', [_vm._v("Hide Details")])]) : _c('a', {
+  }, [_vm._m(0), _vm._v("\n         "), _c('span', [_vm._v("Hide Details")])]) : _c('a', {
     staticClass: "button",
     on: {
       "click": _vm.toggleDetails
     }
-  }, [_vm._m(2), _vm._v("\n         "), _c('span', [_vm._v("Show Details")])])])]), _vm._v(" "), _c('div', {
+  }, [_vm._m(1), _vm._v("\n         "), _c('span', [_vm._v("Show Details")])])])]), _vm._v(" "), _c('div', {
     staticClass: "columns"
   }, [_c('div', {
     staticClass: "column is-8 is-offset-2"
@@ -28300,7 +28330,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.title.content = $event.target.value
       }
     }
-  }), _vm._v(" "), _vm._m(3)]), _vm._v(" "), _c('p', {
+  }), _vm._v(" "), _vm._m(2)]), _vm._v(" "), _c('p', {
     staticClass: "help is-danger"
   }, [_vm._v("This field is required")])]), _vm._v(" "), (_vm.showDetails) ? _c('div', {
     staticClass: "field"
@@ -28327,7 +28357,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.title.fileAs = $event.target.value
       }
     }
-  }), _vm._v(" "), _vm._m(4)])]) : _vm._e(), _vm._v(" "), _c('label', {
+  }), _vm._v(" "), _vm._m(3)])]) : _vm._e(), _vm._v(" "), _c('label', {
     staticClass: "label"
   }, [_vm._v(_vm._s(_vm.$t("message.form.creator")))]), _vm._v(" "), _vm._l((_vm.creators), function(creator, index) {
     return _c('div', {
@@ -28362,7 +28392,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           creator.name = $event.target.value
         }
       }
-    }), _vm._v(" "), _vm._m(5, true)])]), _vm._v(" "), (_vm.showDetails) ? _c('div', {
+    }), _vm._v(" "), _vm._m(4, true)])]), _vm._v(" "), (_vm.showDetails) ? _c('div', {
       staticClass: "column is-half",
       staticStyle: {
         "padding-bottom": "0"
@@ -28390,7 +28420,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           creator.fileAs = $event.target.value
         }
       }
-    }), _vm._v(" "), _vm._m(6, true)])]) : _vm._e()]), _vm._v(" "), _c('div', {
+    }), _vm._v(" "), _vm._m(5, true)])]) : _vm._e()]), _vm._v(" "), _c('div', {
       staticClass: "columns is-mobile"
     }, [_c('div', {
       staticClass: "column"
@@ -28508,7 +28538,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.publisher.name = $event.target.value
       }
     }
-  }), _vm._v(" "), _vm._m(7)])]), _vm._v(" "), (_vm.showDetails) ? _c('div', {
+  }), _vm._v(" "), _vm._m(6)])]), _vm._v(" "), (_vm.showDetails) ? _c('div', {
     staticClass: "field"
   }, [_c('p', {
     staticClass: "control has-icons-left"
@@ -28533,7 +28563,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.publisher.fileAs = $event.target.value
       }
     }
-  }), _vm._v(" "), _vm._m(8)])]) : _vm._e(), _vm._v(" "), (_vm.showDetails) ? _c('div', {
+  }), _vm._v(" "), _vm._m(7)])]) : _vm._e(), _vm._v(" "), (_vm.showDetails) ? _c('div', {
     staticClass: "field"
   }, [_c('label', {
     staticClass: "label"
@@ -28560,7 +28590,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.copyright = $event.target.value
       }
     }
-  }), _vm._v(" "), _vm._m(9)])]) : _vm._e(), _vm._v(" "), (_vm.showDetails) ? _c('div', {
+  }), _vm._v(" "), _vm._m(8)])]) : _vm._e(), _vm._v(" "), (_vm.showDetails) ? _c('div', {
     staticClass: "field"
   }, [_c('label', {
     staticClass: "label"
@@ -28590,7 +28620,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.jpECode = $event.target.value
       }
     }
-  }), _vm._v(" "), _vm._m(10)]), _vm._v(" "), (!_vm.isJPEValid) ? _c('p', {
+  }), _vm._v(" "), _vm._m(9)]), _vm._v(" "), (!_vm.isJPEValid) ? _c('p', {
     staticClass: "help is-danger"
   }, [_vm._v(_vm._s(_vm.$t("message.form.jpe-invalid")))]) : _c('p', {
     staticClass: "help"
@@ -28624,7 +28654,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.sourceISBN = $event.target.value
       }
     }
-  }), _vm._v(" "), _vm._m(11)]), _vm._v(" "), (!_vm.isISBNValid) ? _c('p', {
+  }), _vm._v(" "), _vm._m(10)]), _vm._v(" "), (!_vm.isISBNValid) ? _c('p', {
     staticClass: "help is-danger"
   }, [_vm._v(_vm._s(_vm.$t("message.form.source-invalid")))]) : _c('p', {
     staticClass: "help"
@@ -28654,7 +28684,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.date = $event.target.value
       }
     }
-  }), _vm._v(" "), _vm._m(12)])]) : _vm._e(), _vm._v(" "), _c('div', {
+  }), _vm._v(" "), _vm._m(11)])]) : _vm._e(), _vm._v(" "), _c('div', {
     staticClass: "field"
   }, [_c('p', {
     staticClass: "control"
@@ -28739,14 +28769,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v(_vm._s(_vm.$t("message.form.build-button")))])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "has-text-centered"
-  }, [_c('h1', {
-    staticClass: "title is-spaced"
-  }, [_vm._v("Input metadata and build!")]), _vm._v(" "), _c('p', {
-    staticClass: "subtitle is-spaced"
-  }, [_vm._v("To add more data, click "), _c('code', [_vm._v("Show Details")]), _vm._v(" button.")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('span', {
     staticClass: "icon is-small"
   }, [_c('i', {
@@ -28912,11 +28934,16 @@ module.exports = Component.exports
 //
 //
 //
-//
-//
-//
 
-module.exports = {};
+module.exports = {
+  'methods': {
+    'gotToTop': function () {
+
+      scrollTo(0,0);
+
+    }
+  }
+};
 
 
 /***/ }),
@@ -28924,8 +28951,6 @@ module.exports = {};
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "hero"
   }, [_c('div', {
@@ -28933,12 +28958,27 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "container has-text-centered"
   }, [_c('h1', {
-    staticClass: "title is-spaced"
-  }, [_c('b', [_vm._v("REPLYCA")]), _vm._v(" is a web app to create image-based ebooks")]), _vm._v(" "), _c('p', {
+    staticClass: "title is-spaced",
+    domProps: {
+      "innerHTML": _vm._s(_vm.$t('message.marketing.title'))
+    }
+  }), _vm._v(" "), _c('p', {
     staticClass: "subtitle is-spaced"
-  }, [_vm._v("Comics, Manga, Photo books and Picture books…etc.")]), _vm._v(" "), _c('div', {
+  }, [_vm._v(_vm._s(_vm.$t('message.marketing.subtitle')))]), _vm._v(" "), _c('div', {
     staticClass: "container"
-  }, [_c('div', {
+  }, [_vm._m(0), _vm._v(" "), _c('p', {
+    staticClass: "m-t",
+    staticStyle: {
+      "margin-top": "3rem"
+    }
+  }, [_c('button', {
+    staticClass: "button is-primary is-large is-outlined",
+    on: {
+      "click": _vm.gotToTop
+    }
+  }, [_vm._v("Let's get started!")])])])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "level"
   }, [_c('div', {
     staticClass: "level-item has-text-centered"
@@ -28976,7 +29016,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })]), _vm._v(" "), _c('p', {
     staticClass: "heading"
-  }, [_vm._v("Fine navigations")])])])])])])])])
+  }, [_vm._v("Fine navigations")])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -28993,9 +29033,9 @@ if (false) {
 var disposed = false
 var Component = __webpack_require__(5)(
   /* script */
-  null,
-  /* template */
   __webpack_require__(182),
+  /* template */
+  __webpack_require__(183),
   /* styles */
   null,
   /* scopeId */
@@ -29028,11 +29068,134 @@ module.exports = Component.exports
 
 /***/ }),
 /* 182 */
+/***/ (function(module, exports) {
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+module.exports = {
+  'methods': {
+    'gotToTop': function () {
+
+      scrollTo(0,0);
+
+    }
+  }
+};
+
+
+/***/ }),
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "section container"
   }, [_c('div', {
@@ -29042,63 +29205,112 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "content"
   }, [_c('h2', {
-    staticClass: "title has-text-centered"
-  }, [_vm._v("Learn more")]), _vm._v(" "), _c('ul', [_c('li', [_vm._v("100% client-side!")]), _vm._v(" "), _c('li', [_vm._v("Supported media types are "), _c('code', [_vm._v("PNG")]), _vm._v(", "), _c('code', [_vm._v("JPEG")]), _vm._v(" and "), _c('code', [_vm._v("GIF")]), _vm._v(". "), _c('code', [_vm._v("PNG")]), _vm._v(" and "), _c('code', [_vm._v("JPEG")]), _vm._v(" are recommended.")]), _vm._v(" "), _c('li', [_vm._v("It is recommend that each image have the "), _c('b', [_vm._v("same width and height")]), _vm._v(".")]), _vm._v(" "), _c('li', [_vm._v("The first image is used for cover.")]), _vm._v(" "), _c('li', [_vm._v("The second image is placed in the "), _c('b', [_vm._v("front")]), _vm._v(" page by default (i.e. right page in left-to-right page progression direction, left page in right-to-left).")])])])]), _vm._v(" "), _c('div', {
+    staticClass: "title has-text-centered",
+    domProps: {
+      "innerHTML": _vm._s(_vm.$t('message.learnMore.title'))
+    }
+  }), _vm._v(" "), _c('ul', [_c('li', {
+    domProps: {
+      "innerHTML": _vm._s(_vm.$t('message.learnMore.clientSide'))
+    }
+  }), _vm._v(" "), _c('li', {
+    domProps: {
+      "innerHTML": _vm._s(_vm.$t('message.learnMore.format'))
+    }
+  }), _vm._v(" "), _c('li', {
+    domProps: {
+      "innerHTML": _vm._s(_vm.$t('message.learnMore.resolution'))
+    }
+  }), _vm._v(" "), _c('li', {
+    domProps: {
+      "innerHTML": _vm._s(_vm.$t('message.learnMore.cover'))
+    }
+  }), _vm._v(" "), _c('li', {
+    domProps: {
+      "innerHTML": _vm._s(_vm.$t('message.learnMore.recto'))
+    }
+  })])])]), _vm._v(" "), _c('div', {
     staticClass: "column"
   }, [_c('div', {
     staticClass: "content"
   }, [_c('h2', {
     staticClass: "title has-text-centered"
-  }, [_vm._v("Supported features")]), _vm._v(" "), _c('table', [_c('thead', [_c('tr', [_c('th', [_vm._v("Features")]), _vm._v(" "), _c('th', [_vm._v("Support")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Reflowable content")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Pre-paganated content")]), _vm._v(" "), _c('td', [_c('span', {
+  }, [_vm._v(_vm._s(_vm.$t('message.specs.title')))]), _vm._v(" "), _c('table', [_c('thead', [_c('tr', [_c('th', [_vm._v(_vm._s(_vm.$t('message.specs.features')))]), _vm._v(" "), _c('th', [_vm._v(_vm._s(_vm.$t('message.specs.support')))])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v(_vm._s(_vm.$t('message.specs.reflowableContent')))]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v(_vm._s(_vm.$t('message.specs.prePaganatedContent')))]), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c('tr', [_c('td', [_vm._v(_vm._s(_vm.$t('message.specs.scrollableContent')))]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v(_vm._s(_vm.$t('message.specs.tocNav')))]), _vm._v(" "), _vm._m(1)]), _vm._v(" "), _c('tr', [_c('td', [_vm._v(_vm._s(_vm.$t('message.specs.pageListNav')))]), _vm._v(" "), _vm._m(2)]), _vm._v(" "), _c('tr', [_c('td', [_vm._v(_vm._s(_vm.$t('message.specs.landmarksNav')))]), _vm._v(" "), _vm._m(3)]), _vm._v(" "), _c('tr', [_c('td', [_vm._v(_vm._s(_vm.$t('message.specs.pageSpread')))]), _vm._v(" "), _vm._m(4)]), _vm._v(" "), _c('tr', [_c('td', [_vm._v(_vm._s(_vm.$t('message.specs.textAlternative')))]), _vm._v(" "), _vm._m(5)]), _vm._v(" "), _c('tr', [_c('td', [_vm._v(_vm._s(_vm.$t('message.specs.mediaOverlays')))]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v(_vm._s(_vm.$t('message.specs.a11yMetadata')))]), _vm._v(" "), _vm._m(6)])])])])])]), _vm._v(" "), _c('div', {
+    staticClass: "has-text-centered"
+  }, [_c('p', {
+    staticClass: "m-t",
+    staticStyle: {
+      "margin-top": "2rem"
+    }
+  }, [_c('button', {
+    staticClass: "button is-primary is-large is-outlined",
+    on: {
+      "click": _vm.gotToTop
+    }
+  }, [_vm._v("Let's get started!")])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('td', [_c('span', {
     staticClass: "icon is-primary-text"
   }, [_c('i', {
     staticClass: "fa fa-check-circle",
     attrs: {
       "aria-hidden": "true"
     }
-  })])])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Scrollable content")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("toc nav")]), _vm._v(" "), _c('td', [_c('span', {
+  })])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('td', [_c('span', {
     staticClass: "icon is-primary-text"
   }, [_c('i', {
     staticClass: "fa fa-check-circle",
     attrs: {
       "aria-hidden": "true"
     }
-  })])])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("page-list nav")]), _vm._v(" "), _c('td', [_c('span', {
+  })])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('td', [_c('span', {
     staticClass: "icon is-primary-text"
   }, [_c('i', {
     staticClass: "fa fa-check-circle",
     attrs: {
       "aria-hidden": "true"
     }
-  })])])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("landmarks nav")]), _vm._v(" "), _c('td', [_c('span', {
+  })])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('td', [_c('span', {
     staticClass: "icon is-primary-text"
   }, [_c('i', {
     staticClass: "fa fa-check-circle",
     attrs: {
       "aria-hidden": "true"
     }
-  })])])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("page spread")]), _vm._v(" "), _c('td', [_c('span', {
+  })])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('td', [_c('span', {
     staticClass: "icon is-primary-text"
   }, [_c('i', {
     staticClass: "fa fa-check-circle",
     attrs: {
       "aria-hidden": "true"
     }
-  })])])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Text alternative")]), _vm._v(" "), _c('td', [_c('span', {
+  })])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('td', [_c('span', {
     staticClass: "icon is-primary-text"
   }, [_c('i', {
     staticClass: "fa fa-check-circle",
     attrs: {
       "aria-hidden": "true"
     }
-  })])])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Media overlays")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("A11y metadata")]), _vm._v(" "), _c('td', [_c('span', {
+  })])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('td', [_c('span', {
     staticClass: "icon is-primary-text"
   }, [_c('i', {
     staticClass: "fa fa-check-circle",
     attrs: {
       "aria-hidden": "true"
     }
-  })])])])])])])])])])
+  })])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -29109,7 +29321,7 @@ if (false) {
 }
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -29154,6 +29366,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }))]), _vm._v(" "), _c('div', {
     class: {
       'section': !_vm.noFiles
+    },
+    attrs: {
+      "id": "manager"
     }
   }, [_c('div', {
     staticClass: "container is-fluid"
@@ -29708,15 +29923,15 @@ if (false) {
 }
 
 /***/ }),
-/* 184 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(5)(
   /* script */
-  __webpack_require__(185),
-  /* template */
   __webpack_require__(186),
+  /* template */
+  __webpack_require__(187),
   /* styles */
   null,
   /* scopeId */
@@ -29748,7 +29963,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 185 */
+/* 186 */
 /***/ (function(module, exports) {
 
 //
@@ -29781,7 +29996,7 @@ module.exports = {};
 
 
 /***/ }),
-/* 186 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -29825,19 +30040,19 @@ if (false) {
 }
 
 /***/ }),
-/* 187 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(188)
+  __webpack_require__(189)
 }
 var Component = __webpack_require__(5)(
   /* script */
-  __webpack_require__(190),
-  /* template */
   __webpack_require__(191),
+  /* template */
+  __webpack_require__(192),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -29869,13 +30084,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 188 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(189);
+var content = __webpack_require__(190);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -29895,7 +30110,7 @@ if(false) {
 }
 
 /***/ }),
-/* 189 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(13)(undefined);
@@ -29909,7 +30124,7 @@ exports.push([module.i, "\n.copyright[data-v-654cddae] {\n  margin-bottom: 1rem;
 
 
 /***/ }),
-/* 190 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //
@@ -29994,7 +30209,7 @@ module.exports = {
 
 
 /***/ }),
-/* 191 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -30011,7 +30226,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "column is-half has-text-centered"
   }, [_c('div', {
     staticClass: "content"
-  }, [_c('p', [_vm._v("Please share if you like")]), _vm._v(" "), _c('ul', {
+  }, [_c('p', [_vm._v(_vm._s(_vm.$t('message.footer.pleaseShare')))]), _vm._v(" "), _c('ul', {
     staticClass: "is-inline is-marginless is-paddingless"
   }, [_c('li', {
     staticClass: "is-inline-block"
@@ -30046,7 +30261,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "copyright"
   }, [_vm._v("\n     Copyright © " + _vm._s(_vm.copyRightYear) + " "), _c('a', {
     attrs: {
-      "href": "http://denshochan.com"
+      "href": "https://denshochan.com"
     }
   }, [_vm._v(_vm._s(_vm.$t('message.site-name')))])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -30086,13 +30301,13 @@ if (false) {
 }
 
 /***/ }),
-/* 192 */
+/* 193 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 193 */
+/* 194 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31431,15 +31646,15 @@ if (typeof window !== 'undefined' && window.Vue) {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(12)))
 
 /***/ }),
-/* 194 */
+/* 195 */
 /***/ (function(module, exports) {
 
 const messages = {
   'en': {
     'message': {
-      'title': 'Welcome!',
+      'title': 'Create your own ebook!',
       'subtitle': 'Drag & drop image files here or...',
-      'upload-button-label': 'upload image files',
+      'upload-button-label': 'select local files',
       'draggable': {
         'title': 'Sort pages if necessary',
         'subtitle': 'subtitle',
@@ -31463,6 +31678,8 @@ const messages = {
         }
       },
       'form': {
+        'head': 'Input metadata and build!',
+        'subhead': 'Click <code>Show Details</code> for more metadata',
         'title': 'Title',
         'title-placeholder': 'Your awesome book',
         'title-fileAs': 'Normalized title',
@@ -31500,14 +31717,44 @@ const messages = {
           'commentator': 'Commentator'
         }
       },
+      'marketing': {
+        'title': '<b>REPLYCA</b> is a web app to create image-based ebooks',
+        'subtitle': 'Comics, Manga, Photo books and Picture books…etc.'
+      },
+      'learnMore': {
+        'title': 'Learn more',
+        'clientSide': '100% client-side!',
+        'format': 'Supported media types are <code>PNG</code>, <code>JPEG</code> and <code>GIF</code>. <code>PNG</code> and <code>JPEG</code> are recommended.',
+        'resolution': 'It is recommend that each image have the <strong>same width and height</strong>.',
+        'cover': 'The first image is used for cover.',
+        'recto': 'The second image is placed in the front page by default (i.e. right page in left-to-right page progression direction, left page in right-to-left).'
+      },
+      'specs': {
+        'title': 'Supported features',
+        'features': 'Features',
+        'support': 'Support',
+        'reflowableContent': 'Reflowable content',
+        'prePaganatedContent': 'Pre-paganated content',
+        'scrollableContent': 'Scrollable content',
+        'tocBav': 'toc nav',
+        'pageListNav': 'page-list nav',
+        'landmarksNav': 'landmarks nav',
+        'pageSpread': 'page spread',
+        'textAlternative': 'Text alternative',
+        'mediaOverlays': 'Media overlays',
+        'a11yMetadata': 'A11y metadata'
+      },
+      'footer': {
+        'pleaseShare': 'Please share if you like :)'
+      },
       'site-name': 'Densho Channel'
     }
   },
   'ja': {
     'message': {
-      'title': 'ようこそ！',
+      'title': 'あなただけの電子書籍を作りませんか？',
       'subtitle': 'ここに画像ファイルをドラッグ&ドロップしてください',
-      'upload-button-label': 'アップロードする',
+      'upload-button-label': 'ファイルを選択する',
       'draggable': {
         'title': 'Sort pages if necessary',
         'subtitle': 'subtitle',
@@ -31531,6 +31778,8 @@ const messages = {
         }
       },
       'form': {
+        'head': '本の情報を入力して生成ボタンを押してください',
+        'subhead': '<code>Show Details</code>ボタンから、詳細な情報を入力できます',
         'title': 'タイトル',
         'title-placeholder': '書名',
         'title-fileAs': '整列用タイトル',
@@ -31567,6 +31816,36 @@ const messages = {
           'photographer': '写真',
           'commentator': '解説'
         }
+      },
+      'marketing': {
+        'title': '<b>REPLYCA</b>では画像ベースの電子書籍を作れます。',
+        'subtitle': '漫画、写真集、絵本などに最適です。'
+      },
+      'learnMore': {
+        'title': '特徴',
+        'clientSide': '100％ クライアントサイドで動作します',
+        'format': '対応する画像フォーマットは<code>PNG</code>、<code>JPEG</code>、<code>GIF</code>です。<code>PNG</code>か<code>JPEG</code>を推奨します',
+        'resolution': 'すべての画像を<strong>同じ幅と高さ</strong>にすることを推奨します',
+        'cover': '先頭の画像は表紙になります',
+        'recto': '2番目の画像は初期状態でページの表側（左綴じなら右ページ、右綴じなら左ページ）に配置されます'
+      },
+      'specs': {
+        'title': 'サポートする機構',
+        'features': '機構',
+        'support': 'サポート可否',
+        'reflowableContent': 'リフロー型',
+        'prePaganatedContent': '固定レイアウト型',
+        'scrollableContent': 'スクロール型',
+        'tocNav': '目次',
+        'pageListNav': 'ページリストナビゲーション',
+        'landmarksNav': 'ランドマークナビゲーション',
+        'pageSpread': '見開き指定',
+        'textAlternative': '代替テキスト',
+        'mediaOverlays': 'メディアオーバーレイ',
+        'a11yMetadata': 'アクセシビリティメタデータ'
+      },
+      'footer': {
+        'pleaseShare': '気に入ってくれたらシェアしてください：）'
       },
       'site-name': '電書ちゃんねる'
     }
