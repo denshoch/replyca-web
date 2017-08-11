@@ -9298,6 +9298,12 @@ module.exports = function listToStyles (parentId, list) {
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 const draggable = __webpack_require__(69);
 const appVersion = __webpack_require__(31).version;
@@ -12045,6 +12051,10 @@ exports.push([module.i, "\n", ""]);
 /* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
+//
+//
+//
+//
 //
 //
 //
@@ -28297,11 +28307,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     class: {
       'is-info': _vm.showDetails
     },
+    attrs: {
+      "role": "button"
+    },
     on: {
       "click": _vm.toggleDetails
     }
   }, [_vm._m(0), _vm._v("\n         "), _c('span', [_vm._v("Hide Details")])]) : _c('a', {
     staticClass: "button",
+    attrs: {
+      "role": "button"
+    },
     on: {
       "click": _vm.toggleDetails
     }
@@ -28312,7 +28328,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "field"
   }, [_c('label', {
-    staticClass: "label"
+    staticClass: "label",
+    attrs: {
+      "label_for": "title"
+    }
   }, [_vm._v(_vm._s(_vm.$t("message.form.title")))]), _vm._v(" "), _c('p', {
     staticClass: "control has-icons-left"
   }, [_c('input', {
@@ -28327,6 +28346,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       'is-danger': _vm.title.content === ''
     },
     attrs: {
+      "id": "title",
       "type": "text",
       "placeholder": _vm.$t('message.form.title-placeholder')
     },
@@ -28343,7 +28363,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "help is-danger"
   }, [_vm._v("This field is required")])]), _vm._v(" "), (_vm.showDetails) ? _c('div', {
     staticClass: "field"
-  }, [_c('p', {
+  }, [_c('label', {
+    attrs: {
+      "calss": "sr-only",
+      "label_for": "title-fileAs"
+    }
+  }, [_vm._v(_vm._s(_vm.$t("message.form.title-fileAs")))]), _vm._v(" "), _c('p', {
     staticClass: "control has-icons-left"
   }, [_c('input', {
     directives: [{
@@ -28354,6 +28379,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }],
     staticClass: "input",
     attrs: {
+      "id": "title-fileAs",
       "type": "text",
       "placeholder": _vm.$t('message.form.title-fileAs-placeholder')
     },
@@ -28366,7 +28392,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.title.fileAs = $event.target.value
       }
     }
-  }), _vm._v(" "), _vm._m(3)])]) : _vm._e(), _vm._v(" "), _c('label', {
+  }), _vm._v(" "), _vm._m(3)])]) : _vm._e(), _vm._v(" "), _c('p', {
     staticClass: "label"
   }, [_vm._v(_vm._s(_vm.$t("message.form.creator")))]), _vm._v(" "), _vm._l((_vm.creators), function(creator, index) {
     return _c('div', {
@@ -28378,7 +28404,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticStyle: {
         "padding-bottom": "0"
       }
-    }, [_c('p', {
+    }, [_c('label', {
+      staticClass: "sr-only",
+      attrs: {
+        "label_for": 'creator' + index
+      }
+    }, [_vm._v(_vm._s(_vm.$t("message.form.creator-placeholder")))]), _vm._v(" "), _c('p', {
       staticClass: "control has-icons-left"
     }, [_c('input', {
       directives: [{
@@ -28389,6 +28420,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }],
       staticClass: "input",
       attrs: {
+        "id": 'creator' + index,
         "type": "text",
         "placeholder": _vm.$t('message.form.creator-placeholder')
       },
@@ -28406,7 +28438,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticStyle: {
         "padding-bottom": "0"
       }
-    }, [_c('p', {
+    }, [_c('label', {
+      staticClass: "sr-only",
+      attrs: {
+        "label_for": 'creator-fileAs' + index
+      }
+    }, [_vm._v(_vm._s(_vm.$t("message.form.creator-fileAs")))]), _vm._v(" "), _c('p', {
       staticClass: "control has-icons-left"
     }, [_c('input', {
       directives: [{
@@ -28417,6 +28454,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }],
       staticClass: "input",
       attrs: {
+        "id": 'creator-fileAs' + index,
         "type": "text",
         "placeholder": _vm.$t('message.form.creator-fileAs-placeholder')
       },
@@ -28433,7 +28471,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "columns is-mobile"
     }, [_c('div', {
       staticClass: "column"
-    }, [_c('p', {
+    }, [_c('label', {
+      staticClass: "sr-only",
+      attrs: {
+        "label_for": 'creator-role' + index
+      }
+    }, [_vm._v(_vm._s(_vm.$t("message.form.creator-role")))]), _vm._v(" "), _c('p', {
       staticClass: "control"
     }, [_c('span', {
       staticClass: "select"
@@ -28444,6 +28487,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         value: (creator.role),
         expression: "creator.role"
       }],
+      attrs: {
+        "id": 'creator-role' + index
+      },
       on: {
         "change": function($event) {
           var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
@@ -28505,6 +28551,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "control"
     }, [_c('a', {
       staticClass: "button is-danger is-outlined",
+      attrs: {
+        "role": "button"
+      },
       on: {
         "click": function($event) {
           _vm.creators.splice(index, 1)
@@ -28517,13 +28566,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "control"
   }, [_c('a', {
     staticClass: "button is-success is-outlined",
+    attrs: {
+      "role": "button"
+    },
     on: {
       "click": _vm.newCreator
     }
   }, [_vm._v(_vm._s(_vm.$t("message.form.creator-button-new")))])])]), _vm._v(" "), _c('div', {
     staticClass: "field"
   }, [_c('label', {
-    staticClass: "label"
+    staticClass: "label is-small"
   }, [_vm._v(_vm._s(_vm.$t("message.form.publisher")))]), _vm._v(" "), _c('p', {
     staticClass: "control has-icons-left"
   }, [_c('input', {
@@ -28781,73 +28833,109 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('span', {
     staticClass: "icon is-small"
   }, [_c('i', {
-    staticClass: "fa fa-list"
+    staticClass: "fa fa-list",
+    attrs: {
+      "aria-hidden": "true"
+    }
   })])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('span', {
     staticClass: "icon is-small"
   }, [_c('i', {
-    staticClass: "fa fa-list"
+    staticClass: "fa fa-list",
+    attrs: {
+      "aria-hidden": "true"
+    }
   })])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('span', {
     staticClass: "icon is-left"
   }, [_c('i', {
-    staticClass: "fa fa-book"
+    staticClass: "fa fa-book",
+    attrs: {
+      "aria-hidden": "true"
+    }
   })])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('span', {
     staticClass: "icon is-left"
   }, [_c('i', {
-    staticClass: "fa fa-book"
+    staticClass: "fa fa-book",
+    attrs: {
+      "aria-hidden": "true"
+    }
   })])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('span', {
     staticClass: "icon is-left"
   }, [_c('i', {
-    staticClass: "fa fa-user"
+    staticClass: "fa fa-user",
+    attrs: {
+      "aria-hidden": "true"
+    }
   })])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('span', {
     staticClass: "icon is-left"
   }, [_c('i', {
-    staticClass: "fa fa-user"
+    staticClass: "fa fa-user",
+    attrs: {
+      "aria-hidden": "true"
+    }
   })])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('span', {
     staticClass: "icon is-left"
   }, [_c('i', {
-    staticClass: "fa fa-building"
+    staticClass: "fa fa-building",
+    attrs: {
+      "aria-hidden": "true"
+    }
   })])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('span', {
     staticClass: "icon is-left"
   }, [_c('i', {
-    staticClass: "fa fa-building"
+    staticClass: "fa fa-building",
+    attrs: {
+      "aria-hidden": "true"
+    }
   })])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('span', {
     staticClass: "icon is-left"
   }, [_c('i', {
-    staticClass: "fa fa-building"
+    staticClass: "fa fa-building",
+    attrs: {
+      "aria-hidden": "true"
+    }
   })])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('span', {
     staticClass: "icon is-left"
   }, [_c('i', {
-    staticClass: "fa fa-book"
+    staticClass: "fa fa-book",
+    attrs: {
+      "aria-hidden": "true"
+    }
   })])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('span', {
     staticClass: "icon is-left"
   }, [_c('i', {
-    staticClass: "fa fa-book"
+    staticClass: "fa fa-book",
+    attrs: {
+      "aria-hidden": "true"
+    }
   })])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('span', {
     staticClass: "icon is-left"
   }, [_c('i', {
-    staticClass: "fa fa-calendar"
+    staticClass: "fa fa-calendar",
+    attrs: {
+      "aria-hidden": "true"
+    }
   })])
 }]}
 module.exports.render._withStripped = true
@@ -29402,6 +29490,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       'is-info': _vm.ppd === 'ltr'
     },
     attrs: {
+      "role": "button",
       "disabled": _vm.ppd === 'ltr'
     },
     on: {
@@ -29409,12 +29498,23 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.ppd = 'ltr'
       }
     }
-  }, [_c('span', [_vm._v("L")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('span', [_vm._v("R")])]), _c('a', {
+  }, [_c('span', {
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("L")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('span', {
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("R")]), _vm._v(" "), _c('span', {
+    staticClass: "sr-only"
+  }, [_vm._v(_vm._s(_vm.$t('message.draggable.sr-ltr')))])]), _c('a', {
     staticClass: "button",
     class: {
       'is-info': _vm.ppd === 'rtl'
     },
     attrs: {
+      "role": "button",
       "disabled": _vm.ppd === 'rtl'
     },
     on: {
@@ -29422,12 +29522,25 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.ppd = 'rtl'
       }
     }
-  }, [_c('span', [_vm._v("L")]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('span', [_vm._v("R")])])])]), _vm._v(" "), _c('div', {
+  }, [_c('span', {
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("L")]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('span', {
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("R")]), _vm._v(" "), _c('span', {
+    staticClass: "sr-only"
+  }, [_vm._v(_vm._s(_vm.$t('message.draggable.sr-rtl')))])])])]), _vm._v(" "), _c('div', {
     staticClass: "column is-one-quarter has-text-centered"
   }, [_c('div', {
     staticClass: "field"
   }, [_c('a', {
     staticClass: "button is-danger is-outlined",
+    attrs: {
+      "role": "button"
+    },
     on: {
       "click": _vm.clear
     }
@@ -29478,7 +29591,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }],
     attrs: {
       "type": "checkbox",
-      "disabled": _vm.index === 0
+      "disabled": _vm.modal.index === 0
     },
     domProps: {
       "checked": Array.isArray(_vm.files[_vm.modal.index].forceRecto) ? _vm._i(_vm.files[_vm.modal.index].forceRecto, null) > -1 : (_vm.files[_vm.modal.index].forceRecto)
@@ -29748,7 +29861,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       attrs: {
         "aria-hidden": "true"
       }
-    })])])]), _vm._v(" "), _c('p', {
+    }), _vm._v(" "), _c('span', {
+      staticClass: "sr-only"
+    }, [_vm._v(_vm._s(_vm.$t('message.draggable.sr-edit')))])])])]), _vm._v(" "), _c('p', {
       staticClass: "controll"
     }, [_c('button', {
       staticClass: "button is-small is-outlined",
@@ -29764,7 +29879,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       attrs: {
         "aria-hidden": "true"
       }
-    })])])])])])])]), _vm._v(" "), _c('div', {
+    }), _vm._v(" "), _c('span', {
+      staticClass: "sr-only"
+    }, [_vm._v(_vm._s(_vm.$t('message.draggable.sr-delete')))])])])])])])])]), _vm._v(" "), _c('div', {
       staticClass: "columns is-marginless"
     }, [_c('div', {
       staticClass: "column",
@@ -29861,7 +29978,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       attrs: {
         "aria-hidden": "true"
       }
-    })])])]), _vm._v(" "), _c('p', {
+    }), _vm._v(" "), _c('span', {
+      staticClass: "sr-only"
+    }, [_vm._v(_vm._s(_vm.$t('message.draggable.sr-edit')))])])])]), _vm._v(" "), _c('p', {
       staticClass: "controll"
     }, [_c('button', {
       staticClass: "button is-small is-outlined",
@@ -29877,7 +29996,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       attrs: {
         "aria-hidden": "true"
       }
-    })])])])])])])]), _vm._v(" "), _c('div', {
+    }), _vm._v(" "), _c('span', {
+      staticClass: "sr-only"
+    }, [_vm._v(_vm._s(_vm.$t('message.draggable.sr-delete')))])])])])])])])]), _vm._v(" "), _c('div', {
       staticClass: "columns is-marginless is-mobile"
     }, [_c('div', {
       staticClass: "column",
@@ -29919,19 +30040,28 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('span', {
     staticClass: "icon is-small"
   }, [_c('i', {
-    staticClass: "fa fa-arrow-right"
+    staticClass: "fa fa-arrow-right",
+    attrs: {
+      "aria-hidden": "true"
+    }
   })])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('span', {
     staticClass: "icon is-small"
   }, [_c('i', {
-    staticClass: "fa fa-arrow-left"
+    staticClass: "fa fa-arrow-left",
+    attrs: {
+      "aria-hidden": "true"
+    }
   })])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('span', {
     staticClass: "icon is-small"
   }, [_c('i', {
-    staticClass: "fa fa-times"
+    staticClass: "fa fa-times",
+    attrs: {
+      "aria-hidden": "true"
+    }
   })])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('span', {
@@ -30250,9 +30380,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "margin-bottom": "3rem"
     }
   }, [_c('div', {
-    staticClass: "columns container is-centered"
+    staticClass: "columns container"
   }, [_c('div', {
-    staticClass: "column is-half has-text-centered"
+    staticClass: "column has-text-centered"
   }, [_c('div', {
     staticClass: "content"
   }, [_c('p', [_vm._v(_vm._s(_vm.$t('message.footer.pleaseShare')))]), _vm._v(" "), _c('ul', {
@@ -31686,6 +31816,8 @@ const messages = {
       'upload-button-label': 'select local files',
       'draggable': {
         'title': 'Sort pages if necessary',
+        'sr-ltr': 'Pages progress left-to-right',
+        'sr-rtl': 'Pages progress right-to-left',
         'subtitle': 'subtitle',
         'showDetails': 'Show Details',
         'hideDetails': 'Hide Details',
@@ -31704,7 +31836,9 @@ const messages = {
           'notice': 'Notice/Warning',
           'afterword': 'Afterword',
           'colophon': 'Colophon'
-        }
+        },
+        'sr-edit': 'Edit file information',
+        'sr-delete': 'Delete this file'
       },
       'form': {
         'head': 'Input metadata and build!',
@@ -31717,6 +31851,7 @@ const messages = {
         'creator-placeholder': 'Creator name',
         'creator-fileAs': 'Normalized creator name',
         'creator-fileAs-placeholder': 'Normalized creator name',
+        'creator-role': 'Role',
         'creator-button-new': 'New Creator',
         'creator-button-delete': 'Delete',
         'language': 'Language',
@@ -31787,6 +31922,8 @@ const messages = {
       'draggable': {
         'title': 'Sort pages if necessary',
         'subtitle': 'subtitle',
+        'sr-ltr': 'ページは左から右に進みます',
+        'sr-rtl': 'ページは右から左に進みます',
         'showDetails': 'Show Details',
         'hideDetails': 'Hide Details',
         'clear': 'Clear uploaded files',
@@ -31804,7 +31941,9 @@ const messages = {
           'notice': '注意',
           'afterword': 'あとがき',
           'colophon': '奥付'
-        }
+        },
+        'sr-edit': 'このファイル情報を編集する',
+        'sr-delete': 'このファイルを削除する'
       },
       'form': {
         'head': '本の情報を入力して生成ボタンを押してください',
@@ -31817,6 +31956,7 @@ const messages = {
         'creator-placeholder': '作成者名',
         'creator-fileAs': '整列用作成者名',
         'creator-fileAs-placeholder': 'セイレツヨウカナ',
+        'creator-role': '役割',
         'creator-button-new': '作成者追加',
         'creator-button-delete': '削除',
         'language': '言語',
